@@ -27,7 +27,7 @@ RUN mamba install -c r \
 
 
 RUN R -e 'devtools::install_github("hadley/emo")' && \
-    RUN R -e "install.packages(c('tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
+    R -e "install.packages(c('tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 
 USER $NB_USER
 
