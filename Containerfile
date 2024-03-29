@@ -12,6 +12,7 @@ RUN apt update && \
 
 RUN mamba install -c r \
     r-cherryblossom \
+    r-dt \
     r-fivethirtyeight \
     r-kableextra \
     r-learnr \
