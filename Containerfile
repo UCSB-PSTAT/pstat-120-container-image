@@ -13,7 +13,7 @@ RUN apt update && \
 RUN mamba install -c r \
     r-cherryblossom \
     r-fivethirtyeight \
-    r-r-kableextra \
+    r-kableextra \
     r-learnr \
     r-Lock5Data \
     r-mosaic \
