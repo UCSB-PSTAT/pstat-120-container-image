@@ -19,14 +19,13 @@ RUN mamba install -c r \
     r-mosaic \
     r-mosaiccore \
     r-mosaicdata \
-    r-network \
-    r-palmerpenguins && \
+    r-network && \
     /usr/local/bin/fix-permissions "${CONDA_DIR}" || true
 
 
 
 RUN R -e 'devtools::install_github("hadley/emo")' && \
-    R -e "install.packages(c('tutorial.helpers','Lock5Data','openintro'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
+    R -e "install.packages(c('tutorial.helpers','Lock5Data','openintro','palmerpenguins'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 
 USER $NB_USER
 
