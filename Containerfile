@@ -11,7 +11,6 @@ RUN apt update && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN mamba install -c r \
-    r-cherryblossom \
     r-dt \
     r-fivethirtyeight \
     r-kableextra \
@@ -25,7 +24,7 @@ RUN mamba install -c r \
 
 
 RUN R -e 'devtools::install_github("hadley/emo")' && \
-    R -e "install.packages(c('tutorial.helpers','Lock5Data','openintro','palmerpenguins'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
+    R -e "install.packages(c('cherryblossom','Lock5Data','openintro','palmerpenguins','tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 
 USER $NB_USER
 
