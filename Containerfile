@@ -10,7 +10,7 @@ RUN apt update && \
     apt clean && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN mamba install -c r \
+RUN conda install -c r \
     r-dt \
     r-fivethirtyeight \
     r-kableextra \
