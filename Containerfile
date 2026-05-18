@@ -23,7 +23,7 @@ RUN mamba install -c r \
 
 
 
-RUN R -e 'devtools::install_github("hadley/emo")' && \
+RUN R -e 'pak::pak("hadley/emo")' && \
     R -e "install.packages(c('cherryblossom','Lock5Data','openintro','palmerpenguins','tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 
 USER $NB_USER
